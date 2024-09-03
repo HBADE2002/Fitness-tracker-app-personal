@@ -5,6 +5,11 @@
   /* text-align: center; */
 }
 
+@font-face{
+  font-family : sportsFont;
+  src: url('C:\Users\Hrishikesh Bade\Desktop\ReactJS Projects\Fitness-Tracker_App\my-fitness-app\src\assets\JerrySport-Reguler D.ttf');
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -69,5 +74,21 @@
   :focus{
       border: 2px solid rgb(124, 138, 255);
   }
+
+}
+
+.navText{
+  background-color: rgb(16, 17, 17);
+  padding: 6px 40px;
+text-decoration: none;
+}
+
+.a {
+  margin-right: 16px;
+}
+
+.font-text{
+  font-family: sportsFont;
+   color: darkgreen;
 
 }
