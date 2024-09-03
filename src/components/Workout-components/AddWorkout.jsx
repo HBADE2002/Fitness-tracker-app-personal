@@ -1,16 +1,20 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addActivity } from '../App/activitySlice';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addActivity } from "../../App/activitySlice";
 
 const AddWorkout = () => {
   const dispatch = useDispatch();
-  const [workout, setWorkout] = useState({ type: '', duration: 0, distance: 0 });
+  const [workout, setWorkout] = useState({
+    type: "",
+    duration: 0,
+    distance: 0,
+  });
 
   const handleAdd = () => {
     const newWorkout = { ...workout, id: Date.now() };
     dispatch(addActivity(newWorkout));
-    setWorkout({ type: '', duration: 0, distance: 0 }); // Reset form
+    setWorkout({ type: "", duration: 0, distance: 0 }); // Reset form
   };
 
   return (
@@ -35,7 +39,9 @@ const AddWorkout = () => {
           <input
             type="number"
             value={workout.duration}
-            onChange={(e) => setWorkout({ ...workout, duration: e.target.value })}
+            onChange={(e) =>
+              setWorkout({ ...workout, duration: e.target.value })
+            }
           />
         </div>
         <div>
@@ -43,10 +49,14 @@ const AddWorkout = () => {
           <input
             type="number"
             value={workout.distance}
-            onChange={(e) => setWorkout({ ...workout, distance: e.target.value })}
+            onChange={(e) =>
+              setWorkout({ ...workout, distance: e.target.value })
+            }
           />
         </div>
-        <button type="button" onClick={handleAdd}>Add Workout</button>
+        <button type="button" onClick={handleAdd}>
+          Add Workout
+        </button>
       </form>
     </div>
   );
