@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import AddWorkout from '../components/AddWorkout';
-import WorkoutList from '../components/WorkoutList';
-import EditWorkout from '../components/EditWorkout';
+import React, { useState } from "react";
+import AddWorkout from "../components/Workout-components/AddWorkout";
+import WorkoutList from "../components/Workout-components/WorkoutList";
+import EditWorkout from "../components/Workout-components/EditWorkout";
 
 const ActivityPage = () => {
   const [editingId, setEditingId] = useState(null);
@@ -10,11 +10,7 @@ const ActivityPage = () => {
   return (
     <div>
       <h1>Activity Tracker</h1>
-      {editingId ? (
-        <EditWorkout id={editingId} />
-      ) : (
-        <AddWorkout />
-      )}
+      {editingId ? <EditWorkout id={editingId} /> : <AddWorkout />}
       <WorkoutList onEdit={setEditingId} />
     </div>
   );
