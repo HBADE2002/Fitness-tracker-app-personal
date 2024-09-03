@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import './App.css';
 import ActivityPage from "./pages/ActivityPage";
 import Navbar from "./components/NavBar";
 import PersonalInfoSignup from "./components/PersonalInfoSignup";
