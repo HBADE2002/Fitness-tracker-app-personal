@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../App/activitySlice";
 
@@ -20,10 +22,10 @@ const AddWorkout = () => {
   return (
     <div>
       <h2>Add Workout</h2>
-      <form>
+      <Form className="personalInfo-input-container">
         <div>
-          <label>Type of Workout</label>
-          <select
+          <Form.Label>Type of Workout</Form.Label>
+          <Form.Select
             value={workout.type}
             onChange={(e) => setWorkout({ ...workout, type: e.target.value })}
           >
@@ -32,11 +34,12 @@ const AddWorkout = () => {
             <option value="Walking">Walking</option>
             <option value="Cycling">Cycling</option>
             <option value="Swimming">Swimming</option>
-          </select>
+          </Form.Select>
         </div>
         <div>
-          <label>Duration (minutes)</label>
+          <Form.Label>Duration (minutes)</Form.Label>
           <input
+            className="input-container"
             type="number"
             value={workout.duration}
             onChange={(e) =>
@@ -47,6 +50,7 @@ const AddWorkout = () => {
         <div>
           <label>Distance (km)</label>
           <input
+            className="input-container"
             type="number"
             value={workout.distance}
             onChange={(e) =>
@@ -54,10 +58,10 @@ const AddWorkout = () => {
             }
           />
         </div>
-        <button type="button" onClick={handleAdd}>
+        <Button type="button" onClick={handleAdd}>
           Add Workout
-        </button>
-      </form>
+        </Button>
+      </Form>
     </div>
   );
 };

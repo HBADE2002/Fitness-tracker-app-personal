@@ -7,11 +7,13 @@ function ColorSchemesExample() {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">JOSH</Navbar.Brand>
+          <Navbar.Brand href='#home'>JOSH</Navbar.Brand>
           <Nav className="me-auto ">
-            <Link className="navText" to="/personal-info-page">Personal Info</Link>
-            <Link className="navText"  to="/activity-page">Activity Page</Link>
-            <Link className="navText"  to="/about-page">About</Link>
+
+            {/* <Link className="navText" to="/">Home</Link> */}
+            <Link className="NavText"  to="/activity-page">Activity Page</Link>
+            <Link className="NavText" to="/personal-info-page">Personal Info</Link>
+            <Link className="NavText"  to="/about-page">About</Link>
           </Nav>
         </Container>
       </Navbar>
