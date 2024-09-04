@@ -1,11 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import HealthMetricsComponent from "./HealthMetricsComponent";
-
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 function PersonalInfoSignup() {
+  const [showHealthMetrics, setShowHealthMetrics] = useState(false);
   const [personalInfo, setPersonalInfo] = useState({
     name: "",
     age: "",
+    sex: "",
     weight: "",
     height: "",
   });
@@ -14,14 +17,20 @@ function PersonalInfoSignup() {
     const { name, value } = e.target;
     setPersonalInfo((prevState) => ({ ...prevState, [name]: value }));
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowHealthMetrics(true);
+  };
+
   return (
     <div className="info-body-container">
       <div>
         <h1>Personal Information</h1>
       </div>
       <div>
-        <form className="personalInfo-input-container">
-          <label htmlFor="name">Full Name:</label>
+        <Form className="personalInfo-input-container" onSubmit={handleSubmit}>
+          <Form.Label htmlFor="name">Full Name:</Form.Label>
           <input
             className="input-container"
             type="text"
@@ -31,7 +40,7 @@ function PersonalInfoSignup() {
             onChange={handleInputChange}
             required
           />
-          <label htmlFor="name">Age:</label>
+          <Form.Label htmlFor="name">Age:</Form.Label>
           <input
             className="input-container"
             type="number"
@@ -41,6 +50,42 @@ function PersonalInfoSignup() {
             onChange={handleInputChange}
             required
           />
+          
+          <Form.Group>
+            <Form.Label>Sex:</Form.Label>
+            <div>
+              <Form.Check
+                type="radio"
+                label="Male"
+                name="sex"
+                id="sexMale"
+                value="Male"
+                checked={personalInfo.sex === "Male"}
+                onChange={handleInputChange}
+                required
+              />
+              <Form.Check
+                type="radio"
+                label="Female"
+                name="sex"
+                id="sexFemale"
+                value="Female"
+                checked={personalInfo.sex === "Female"}
+                onChange={handleInputChange}
+                required
+              />
+              <Form.Check
+                type="radio"
+                label="Other"
+                name="sex"
+                id="sexOther"
+                value="Other"
+                checked={personalInfo.sex === "Other"}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </Form.Group>
           <label htmlFor="name">Weight (kg):</label>
           <input
             className="input-container"
@@ -51,7 +96,7 @@ function PersonalInfoSignup() {
             onChange={handleInputChange}
             required
           />
-          <label htmlFor="name">Height (cm):</label>
+          <Form.Label htmlFor="name">Height (cm):</Form.Label>
           <input
             className="input-container"
             type="number"
@@ -61,12 +106,18 @@ function PersonalInfoSignup() {
             onChange={handleInputChange}
             required
           />
-        </form>
+          <div>
+            <Button type="submit">Calculate my Health Metrics</Button>
+          </div>
+        </Form>
       </div>
 
-      <HealthMetricsComponent weight={Number(personalInfo.weight)}>
-        height = {Number(personalInfo.height)}
-      </HealthMetricsComponent>
+      {showHealthMetrics && (
+        <HealthMetricsComponent
+          weight={Number(personalInfo.weight)}
+          height={Number(personalInfo.height)}
+        ></HealthMetricsComponent>
+      )}
     </div>
   );
 }
