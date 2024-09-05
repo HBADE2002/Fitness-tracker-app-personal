@@ -27,14 +27,14 @@ function HealthMetricsComponent({ weight, height }) {
       <h2>Health Metrics</h2>
       <p>BMI: {bmi !== null ? bmi.toFixed(2) : 'N/A'}</p>
       <p>Nutrition Level: {nutritionLevel || 'N/A'}</p>
-      <p>Recommended Water Intake: {waterIntake !== null ? `${waterIntake.toFixed(2)} liters` : 'N/A'}</p>
+      <p>Recommended Water Intake: {waterIntake !== null ? `${waterIntake.toFixed(2)} liters per day ` : 'N/A'}</p>
       <h3>Macronutrient Needs</h3>
-      <p>Protein: {macronutrients.protein !== null ? `${macronutrients.protein.toFixed(2)} grams` : 'N/A'}</p>
+      <p>Protein: {macronutrients.protein !== null ? `${macronutrients.protein.toFixed(2)} grams per day` : 'N/A'}</p>
       <p>Fat: {macronutrients.fat.min !== null && macronutrients.fat.max !== null 
-              ? `${macronutrients.fat.min.toFixed(2)} - ${macronutrients.fat.max.toFixed(2)} grams` 
+              ? `${macronutrients.fat.min.toFixed(2)} - ${macronutrients.fat.max.toFixed(2)} grams per day` 
               : 'N/A'}</p>
       <p>Carbs: {macronutrients.carbs.min !== null && macronutrients.carbs.max !== null 
-              ? `${macronutrients.carbs.min.toFixed(2)} - ${macronutrients.carbs.max.toFixed(2)} grams` 
+              ? `${macronutrients.carbs.min.toFixed(2)} - ${macronutrients.carbs.max.toFixed(2)} grams per day` 
               : 'N/A'}</p>
     </div>
   );
