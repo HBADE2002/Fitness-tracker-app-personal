@@ -1,10 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addGoal } from "../../App/goalSlice";
-import {  Form, Button } from "react-bootstrap";
+import { addGoal } from "../../App/goalSlice"; // Assuming your goalSlice is stored in the App folder
+import { Form, Button } from "react-bootstrap";
+
 const AddGoal = () => {
   const dispatch = useDispatch();
+  
+  // Defining local state for form inputs
   const [goalType, setGoalType] = useState("");
   const [currentValue, setCurrentValue] = useState("");
   const [targetValue, setTargetValue] = useState("");
@@ -15,17 +18,26 @@ const AddGoal = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validating the form before dispatch
+    if (!goalType || !currentValue || !targetValue || !unit || !deadline) {
+      return alert("Please fill in all required fields.");
+    }
+
     const goalData = {
       goalType,
       currentValue,
       targetValue,
       unit,
       deadline,
-      frequency,
-      notes,
+      frequency: frequency || null, // If frequency is optional
+      notes: notes || "", // Default to empty string if no notes
     };
+
+    // Dispatching the action to add a new goal
     dispatch(addGoal(goalData));
-    // Clear form after submission
+
+    // Clearing the form after successful submission
     setGoalType("");
     setCurrentValue("");
     setTargetValue("");
@@ -126,8 +138,10 @@ const AddGoal = () => {
           />
         </div>
 
-        <div className="flex space-x-2">
-          <Button type="submit">Create Goal</Button>
+        <div className="d-flex justify-content-between mt-4">
+          <Button type="submit" variant="primary">
+            Create Goal
+          </Button>
         </div>
       </Form>
     </>
