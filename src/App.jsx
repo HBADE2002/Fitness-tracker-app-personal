@@ -5,6 +5,7 @@ import ActivityPage from "./pages/ActivityPage";
 import Navbar from "./components/NavBar";
 import PersonalInfoSignup from "./components/PersonalInfoSignup";
 import About from "./components/About";
+import AddGoal from "./components/GoalSetting-components/AddGoal";
 import { Route, Routes } from "react-router-dom";
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/activity-page" element={<ActivityPage />} />
         <Route path="/about-page" element={<About />} />
       </Routes>
+      <AddGoal></AddGoal>
     </div>
   );
 }
