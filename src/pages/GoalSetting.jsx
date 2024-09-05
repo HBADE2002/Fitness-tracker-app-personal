@@ -12,7 +12,7 @@ const GoalSetting = () => {
   const [selectedGoal, setSelectedGoal] = useState(null);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 goal-setting-container">
       <h2 className="text-2xl font-bold">Goal Setting</h2>
 
       {/* Add New Goal */}

@@ -24,14 +24,14 @@ function PersonalInfoSignup() {
   };
 
   return (
-    <div className="info-body-container">
+    <div className="personal-info-container">
       <div>
         <h1>Personal Information</h1>
       </div>
       <div>
-        <Form className="personalInfo-input-container" onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <Form.Label htmlFor="name">Full Name:</Form.Label>
-          <input
+          <Form.Control
             className="input-container"
             type="text"
             id="name"
@@ -41,7 +41,7 @@ function PersonalInfoSignup() {
             required
           />
           <Form.Label htmlFor="name">Age:</Form.Label>
-          <input
+          <Form.Control
             className="input-container"
             type="number"
             id="age"
@@ -87,7 +87,7 @@ function PersonalInfoSignup() {
             </div>
           </Form.Group>
           <label htmlFor="name">Weight (kg):</label>
-          <input
+          <Form.Control
             className="input-container"
             type="number"
             id="weight"
@@ -97,7 +97,7 @@ function PersonalInfoSignup() {
             required
           />
           <Form.Label htmlFor="name">Height (cm):</Form.Label>
-          <input
+          <Form.Control
             className="input-container"
             type="number"
             id="height"

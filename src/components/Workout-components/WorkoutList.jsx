@@ -3,6 +3,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteActivity } from "../../App/activitySlice";
+import {Button} from "react-bootstrap"
 
 const WorkoutList = ({ onEdit }) => {
   const dispatch = useDispatch();
@@ -22,8 +23,8 @@ const WorkoutList = ({ onEdit }) => {
               <span>{activity.type}</span> |
               <span>{activity.duration} mins</span> |
               <span>{activity.distance} km</span>
-              <button onClick={() => onEdit(activity.id)}>Edit</button>
-              <button onClick={() => handleDelete(activity.id)}>Delete</button>
+              <Button onClick={() => onEdit(activity.id)}>Edit</Button>
+              <Button onClick={() => handleDelete(activity.id)}>Delete</Button>
             </div>
           </li>
         ))}
