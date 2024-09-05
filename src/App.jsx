@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import './App.css';
+import "./App.css";
 import ActivityPage from "./pages/ActivityPage";
 import Navbar from "./components/NavBar";
-import PersonalInfoSignup from "./components/PersonalInfoSignup";
-import About from "./components/About";
-import AddGoal from "./components/GoalSetting-components/AddGoal";
+import PersonalInfoSignup from "./pages/PersonalInfoSignup";
+import About from "./pages/About";
+import GoalSetting from "./pages/GoalSetting";
 import { Route, Routes } from "react-router-dom";
 function App() {
   return (
@@ -16,8 +16,9 @@ function App() {
         <Route path="/personal-info-page" element={<PersonalInfoSignup />} />
         <Route path="/activity-page" element={<ActivityPage />} />
         <Route path="/about-page" element={<About />} />
+        <Route path="/goal-setting-page" element={<GoalSetting />} /> 
       </Routes>
-      <AddGoal></AddGoal>
+      
     </div>
   );
 }

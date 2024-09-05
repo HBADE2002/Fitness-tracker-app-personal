@@ -50,7 +50,7 @@ function PersonalInfoSignup() {
             onChange={handleInputChange}
             required
           />
-          
+
           <Form.Group>
             <Form.Label>Sex:</Form.Label>
             <div>
