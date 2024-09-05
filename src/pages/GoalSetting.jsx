@@ -8,7 +8,7 @@ import DeleteGoal from "../components/GoalSetting-components/DeleteGoal";
 
 const GoalSetting = () => {
   // Access the goals array from the state
-  const goals = useSelector((state) => state.goalSlice.goals); // Correct slice name
+  const goals = useSelector((state) => state.goalSlice.goals); 
   const [selectedGoal, setSelectedGoal] = useState(null);
 
   return (

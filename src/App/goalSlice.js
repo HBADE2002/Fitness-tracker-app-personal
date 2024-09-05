@@ -9,7 +9,7 @@ const goalSlice = createSlice({
   initialState,
   reducers: {
     addGoal: (state, action) => {
-      state.goals.push({ ...action.payload, id: Date.now() }); // Correct the push operation
+      state.goals.push({ ...action.payload, id: Date.now() }); 
     },
     updateGoal: (state, action) => {
       const index = state.goals.findIndex((goal) => goal.id === action.payload.id);
@@ -18,7 +18,7 @@ const goalSlice = createSlice({
       }
     },
     deleteGoal: (state, action) => {
-      state.goals = state.goals.filter((goal) => goal.id !== action.payload); // Correctly filter goals
+      state.goals = state.goals.filter((goal) => goal.id !== action.payload); 
     },
   },
 });
