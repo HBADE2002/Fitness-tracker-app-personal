@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { updateGoal } from '../../App/goalSlice';
-import { Button, Form } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { updateGoal } from "../../App/goalSlice";
+import { Button, Form } from "react-bootstrap";
 
 const UpdateGoal = ({ goal }) => {
   const dispatch = useDispatch();
@@ -14,8 +14,8 @@ const UpdateGoal = ({ goal }) => {
   const [targetValue, setTargetValue] = useState(goal.targetValue);
   const [unit, setUnit] = useState(goal.unit);
   const [deadline, setDeadline] = useState(goal.deadline);
-  const [frequency, setFrequency] = useState(goal.frequency || '');
-  const [notes, setNotes] = useState(goal.notes || '');
+  const [frequency, setFrequency] = useState(goal.frequency || "");
+  const [notes, setNotes] = useState(goal.notes || "");
 
   // Update state when the goal prop changes
   useEffect(() => {
@@ -24,8 +24,8 @@ const UpdateGoal = ({ goal }) => {
     setTargetValue(goal.targetValue);
     setUnit(goal.unit);
     setDeadline(goal.deadline);
-    setFrequency(goal.frequency || '');
-    setNotes(goal.notes || '');
+    setFrequency(goal.frequency || "");
+    setNotes(goal.notes || "");
   }, [goal]);
 
   const handleSubmit = (e) => {
@@ -33,7 +33,7 @@ const UpdateGoal = ({ goal }) => {
 
     // Create the updated goal object
     const updatedGoal = {
-      ...goal,  // Copy over the original goal data
+      ...goal, // Copy over the original goal data
       goalType,
       currentValue,
       targetValue,
@@ -52,6 +52,7 @@ const UpdateGoal = ({ goal }) => {
       <div>
         <Form.Label htmlFor="goalType">Goal Type</Form.Label>
         <Form.Select
+          className="input-container"
           id="goalType"
           value={goalType}
           onChange={(e) => setGoalType(e.target.value)}
@@ -69,7 +70,8 @@ const UpdateGoal = ({ goal }) => {
       <div className="flex space-x-4">
         <div className="flex-1">
           <Form.Label htmlFor="currentValue">Current Value</Form.Label>
-          <input
+          <Form.Control
+            className="input-container"
             id="currentValue"
             type="number"
             value={currentValue}
@@ -79,7 +81,8 @@ const UpdateGoal = ({ goal }) => {
         </div>
         <div className="flex-1">
           <Form.Label htmlFor="targetValue">Target Value</Form.Label>
-          <input
+          <Form.Control
+            className="input-container"
             id="targetValue"
             type="number"
             value={targetValue}
@@ -89,7 +92,8 @@ const UpdateGoal = ({ goal }) => {
         </div>
         <div className="flex-1">
           <Form.Label htmlFor="unit">Unit</Form.Label>
-          <input
+          <Form.Control
+            className="input-container"
             id="unit"
             type="text"
             value={unit}
@@ -102,7 +106,8 @@ const UpdateGoal = ({ goal }) => {
 
       <div>
         <Form.Label htmlFor="deadline">Deadline</Form.Label>
-        <input
+        <Form.Control
+          className="input-container"
           id="deadline"
           type="date"
           value={deadline}
@@ -114,6 +119,7 @@ const UpdateGoal = ({ goal }) => {
       <div>
         <Form.Label htmlFor="frequency">Frequency</Form.Label>
         <Form.Select
+          className="input-container"
           id="frequency"
           value={frequency}
           onChange={(e) => setFrequency(e.target.value)}
@@ -128,6 +134,7 @@ const UpdateGoal = ({ goal }) => {
       <div>
         <Form.Label htmlFor="notes">Additional Notes</Form.Label>
         <Form.Control
+          className="input-container"
           as="textarea"
           rows={3}
           id="notes"

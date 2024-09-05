@@ -23,7 +23,7 @@ function HealthMetricsComponent({ weight, height }) {
   }, [height, dispatch]);
 
   return (
-    <div>
+    <div className="health-metrics-container">
       <h2>Health Metrics</h2>
       <p>BMI: {bmi !== null ? bmi.toFixed(2) : 'N/A'}</p>
       <p>Nutrition Level: {nutritionLevel || 'N/A'}</p>

@@ -8,11 +8,11 @@ import DeleteGoal from "../components/GoalSetting-components/DeleteGoal";
 
 const GoalSetting = () => {
   // Access the goals array from the state
-  const goals = useSelector((state) => state.goalSlice.goals); // Correct slice name
+  const goals = useSelector((state) => state.goalSlice.goals); 
   const [selectedGoal, setSelectedGoal] = useState(null);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 goal-setting-container">
       <h2 className="text-2xl font-bold">Goal Setting</h2>
 
       {/* Add New Goal */}

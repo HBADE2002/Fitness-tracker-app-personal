@@ -6,7 +6,7 @@ import { Form, Button } from "react-bootstrap";
 
 const AddGoal = () => {
   const dispatch = useDispatch();
-  
+
   // Defining local state for form inputs
   const [goalType, setGoalType] = useState("");
   const [currentValue, setCurrentValue] = useState("");
@@ -30,7 +30,7 @@ const AddGoal = () => {
       targetValue,
       unit,
       deadline,
-      frequency: frequency || null, // If frequency is optional
+      frequency: frequency || null,
       notes: notes || "", // Default to empty string if no notes
     };
 
@@ -53,6 +53,7 @@ const AddGoal = () => {
         <div>
           <Form.Label htmlFor="goalType">Goal Type</Form.Label>
           <Form.Select
+            className="input-container"
             id="goalType"
             value={goalType}
             onChange={(e) => setGoalType(e.target.value)}
@@ -70,7 +71,8 @@ const AddGoal = () => {
         <div className="flex space-x-4">
           <div className="flex-1">
             <Form.Label htmlFor="currentValue">Current Value</Form.Label>
-            <input
+            <Form.Control
+              className="input-container"
               id="currentValue"
               type="number"
               value={currentValue}
@@ -80,7 +82,8 @@ const AddGoal = () => {
           </div>
           <div className="flex-1">
             <Form.Label htmlFor="targetValue">Target Value</Form.Label>
-            <input
+            <Form.Control
+              className="input-container"
               id="targetValue"
               type="number"
               value={targetValue}
@@ -90,7 +93,8 @@ const AddGoal = () => {
           </div>
           <div className="flex-1">
             <Form.Label htmlFor="unit">Unit</Form.Label>
-            <input
+            <Form.Control
+              className="input-container"
               id="unit"
               type="text"
               value={unit}
@@ -103,7 +107,8 @@ const AddGoal = () => {
 
         <div>
           <Form.Label htmlFor="deadline">Deadline</Form.Label>
-          <input
+          <Form.Control
+            className="input-container"
             id="deadline"
             type="date"
             value={deadline}
@@ -115,6 +120,7 @@ const AddGoal = () => {
         <div>
           <Form.Label htmlFor="frequency">Frequency</Form.Label>
           <Form.Select
+            className="input-container"
             id="frequency"
             value={frequency}
             onChange={(e) => setFrequency(e.target.value)}
@@ -129,6 +135,7 @@ const AddGoal = () => {
         <div>
           <Form.Label htmlFor="notes">Additional Notes</Form.Label>
           <Form.Control
+            className="input-container"
             as="textarea"
             rows={3}
             id="notes"

@@ -8,7 +8,7 @@ const ActivityPage = () => {
   const [editingId, setEditingId] = useState(null);
 
   return (
-    <div>
+    <div className="activity-page-container">
       <h1>Activity Tracker</h1>
       {editingId ? <EditWorkout id={editingId} /> : <AddWorkout />}
       <WorkoutList onEdit={setEditingId} />
