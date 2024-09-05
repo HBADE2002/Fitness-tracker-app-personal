@@ -69,7 +69,7 @@ const UpdateGoal = ({ goal }) => {
       <div className="flex space-x-4">
         <div className="flex-1">
           <Form.Label htmlFor="currentValue">Current Value</Form.Label>
-          <input
+          <Form.Control
             id="currentValue"
             type="number"
             value={currentValue}
@@ -79,7 +79,7 @@ const UpdateGoal = ({ goal }) => {
         </div>
         <div className="flex-1">
           <Form.Label htmlFor="targetValue">Target Value</Form.Label>
-          <input
+          <Form.Control
             id="targetValue"
             type="number"
             value={targetValue}
@@ -89,7 +89,7 @@ const UpdateGoal = ({ goal }) => {
         </div>
         <div className="flex-1">
           <Form.Label htmlFor="unit">Unit</Form.Label>
-          <input
+          <Form.Control
             id="unit"
             type="text"
             value={unit}
@@ -102,7 +102,7 @@ const UpdateGoal = ({ goal }) => {
 
       <div>
         <Form.Label htmlFor="deadline">Deadline</Form.Label>
-        <input
+        <Form.Control
           id="deadline"
           type="date"
           value={deadline}
