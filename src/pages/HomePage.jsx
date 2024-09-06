@@ -16,7 +16,15 @@ function HomePage() {
             and a variety of options to help you achieve your fitness goals.
           </p>
         </div>
-        <h2 className="welcome-text">Key Features</h2>
+        <div className="homepage-images-grid">
+            <img src="https://www.circlehealthgroup.co.uk/-/media/circle/articles/blogs/health-matters/hero/10-health-benefits-of-cycling.jpg?rev=87e9800e7af8410a911eb77ce09d0bdd&webp=true&h=700&iar=1&w=1600&crop=1&hash=D80AEF36B27DE9E9BD268D63AA6045FB" alt="image-cycling" />
+            <img src="https://img.freepik.com/premium-photo/couple-jogging-by-lake-with-lake-background_1316799-2179.jpg?w=740" alt="images-jogging" />
+            <img src="https://images.pexels.com/photos/1263348/pexels-photo-1263348.jpeg?auto=compress&cs=tinysrgb&w=400https://images.pexels.com/photos/1263348/pexels-photo-1263348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Body Metrics Calculator" />
+            <img src="https://eliteclubs.com/wp-content/uploads/2021/08/walking-for-exercise.png" alt="Community Support" />
+  
+        </div>
+        <div className="home-container" >
+        <h2 className="welcome-text" style={{marginLeft:'490px'}}>Key Features</h2>
         <div className="feature-flex welcome-text">
           <div className="feature-item ">
             <h3>Exercise Tracking</h3>
@@ -46,6 +54,8 @@ function HomePage() {
             </p>
           </div>
         </div>
+        </div>
+        
          {/* Footer Section */}
       <footer className="footer">
         <p>

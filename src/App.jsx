@@ -6,7 +6,7 @@ import Navbar from "./components/NavBar";
 import PersonalInfoSignup from "./pages/PersonalInfoSignup";
 import About from "./pages/About";
 import GoalSetting from "./pages/GoalSetting";
-import HomePage from "./components/HomePage";
+import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router-dom";
 function App() {
   return (
