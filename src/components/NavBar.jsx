@@ -14,10 +14,10 @@ function ColorSchemesExample() {
             <Tabs variant='soft-rounded' colorScheme='green'>
               <TabList className='nav-text-box-container'>
                 <Link className="NavText font-text" to="/">Home</Link>
-                <Link className="NavText font-text" to="/personal-info-page">Personal Info</Link>
-                <Link className="NavText font-text" to="/activity-page">Activity Page</Link>
-                <Link className="NavText font-text" to="/goal-setting-page">Goal Setting</Link>
-                <Link className="NavText font-text" to="/about-page">About</Link>
+                <Link className="NavText font-text" to="/user-info-page">User Info</Link>
+                <Link className="NavText font-text" to="/exercise-tracker-page">Exercise Tracker</Link>
+                <Link className="NavText font-text" to="/goal-setter-page">Goal Setter</Link>
+                <Link className="NavText font-text" to="/about-us-page">About Us</Link>
               </TabList>
             </Tabs>
           </Nav>

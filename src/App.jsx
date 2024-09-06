@@ -15,10 +15,10 @@ function App() {
 
       <Routes>
       <Route path="/" element={<HomePage />} />
-        <Route path="/personal-info-page" element={<PersonalInfoSignup />} />
-        <Route path="/activity-page" element={<ActivityPage />} />
-        <Route path="/about-page" element={<About />} />
-        <Route path="/goal-setting-page" element={<GoalSetting />} /> 
+        <Route path="/user-info-page" element={<PersonalInfoSignup />} />
+        <Route path="/exercise-tracker-page" element={<ActivityPage />} />
+        <Route path="/about-us-page" element={<About />} />
+        <Route path="/goal-setter-page" element={<GoalSetting />} /> 
       </Routes>
       
     </div>
