@@ -1,13 +1,15 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  box-sizing: 0;
+  width: 80% auto;
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
   /* text-align: center; */
 }
 
-@font-face{
-  font-family : sportsFont;
-  src: url('C:\Users\Hrishikesh Bade\Desktop\ReactJS Projects\Fitness-Tracker_App\my-fitness-app\src\assets\JerrySport-Reguler D.ttf');
+@font-face {
+  font-family: sportsFont;
+  src: url("C:\Users\Hrishikesh Bade\Desktop\ReactJS Projects\Fitness-Tracker_App\my-fitness-app\src\assets\Super Retro Italic M54.ttf");
 }
 
 .logo {
@@ -46,7 +48,7 @@
   color: #888;
 }
 
-.personalInfo-input-container{
+.personalInfo-input-container {
   width: 80% auto;
   display: flex;
   flex-wrap: nowrap;
@@ -54,12 +56,11 @@
   gap: 10px;
 }
 
-.info-body-container{
+.info-body-container {
   width: 80%;
 }
 
-.input-container{
-  
+.input-container {
   width: 30%;
   color: rgb(36, 35, 42);
   font-size: 16px;
@@ -71,29 +72,50 @@
   box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
   background: rgb(251, 251, 251);
   transition: all 0.1s ease 0s;
-  :focus{
-      border: 2px solid rgb(124, 138, 255);
+  :focus {
+    border: 2px solid rgb(124, 138, 255);
   }
-
+  /* box-shadow: 10px 8px 0px rgb(191 219 254); */
+}
+.navbar > .container,
+.navbar > .container-fluid,
+.navbar > .container-lg,
+.navbar > .container-md,
+.navbar > .container-sm,
+.navbar > .container-xl,
+.navbar > .container-xxl {
+  margin-left: 20px; /* Or any value you prefer */
 }
 
-.NavText{
-  background-color: rgb(16, 17, 17);
-  padding: 6px 40px;
+.NavText {
+  /* background-color: rgb(16, 17, 17); */
+  color: green;
+  font-size: 10px;
+  padding: 6px 30px;
+
   text-decoration: none;
+  background-color: azure;
+  gap: 10px;
+  border: rosybrown 2px solid;
+  border-radius: 10px;
+  /* font-weight: bold; */
 }
-
+.nav-text-box-container {
+  gap: 10px;
+}
+.nav-header-text-box-container {
+  font-size: larger;
+}
 .a {
   margin-right: 16px;
 }
 
-.font-text{
+.font-text {
   font-family: sportsFont;
-   color: darkgreen;
-
+  color: darkgreen;
 }
 
-.goal-setting-container{
+.goal-setting-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -102,7 +124,7 @@
   align-items: center;
   justify-content: center;
 }
-.health-metrics-container{
+.health-metrics-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -111,7 +133,7 @@
   align-items: center;
   justify-content: center;
 }
-.activity-page-container{
+.activity-page-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -120,7 +142,7 @@
   align-items: center;
   justify-content: center;
 }
-.personal-info-container{
+.personal-info-container {
   width: 100%;
   display: flex;
   flex-direction: column;
