@@ -6,6 +6,7 @@ import Navbar from "./components/NavBar";
 import PersonalInfoSignup from "./pages/PersonalInfoSignup";
 import About from "./pages/About";
 import GoalSetting from "./pages/GoalSetting";
+import HomePage from "./components/HomePage";
 import { Route, Routes } from "react-router-dom";
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
 
       <Routes>
+      <Route path="/" element={<HomePage />} />
         <Route path="/personal-info-page" element={<PersonalInfoSignup />} />
         <Route path="/activity-page" element={<ActivityPage />} />
         <Route path="/about-page" element={<About />} />
