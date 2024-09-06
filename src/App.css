@@ -114,6 +114,28 @@
   font-family: sportsFont;
   color: darkgreen;
 }
+.font-text-heading {
+  margin-top: 15px;
+  font-family: sportsFont;
+  width: 80%;
+  color: rgb(109, 20, 139);
+  text-align: center;
+  font-size: 2.5rem; /* Increases the font size for prominence */
+  font-weight: bold; /* Makes the text bold */
+  text-transform: uppercase; /* Transforms text to uppercase */
+  letter-spacing: 2px; /* Adds space between letters */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+  background: linear-gradient(45deg, #e0ffe0, #a0ffa0); /* Adds a gradient background */
+  padding: 20px; /* Adds padding around the text */
+  border-bottom: 3px solid darkgreen; /* Adds a bottom border */
+  border-radius: 8px; /* Rounds the corners */
+  transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+.font-text-heading:hover {
+  color: rgb(57, 17, 75); /* Changes text color on hover */
+  transform: scale(1.05); /* Slightly enlarges the text on hover */
+  background: linear-gradient(45deg, #a0ffa0, #e0ffe0); /* Reverses the gradient on hover */
+}
 
 .goal-setting-container {
   width: 100%;
@@ -176,4 +198,57 @@
   transform: translateY(-3px);
   background-color: rgb(226, 249, 249);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.homepage-container{
+  width: 80% auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.welcome-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50; /* Dark blue */
+  margin-bottom: 10px;
+}
+
+.description-text {
+  font-family: 'Verdana', sans-serif;
+  font-size: 1.2rem;
+  color: #34495e; /* Slightly lighter blue */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.highlighted-text {
+  background-color: #f39c12; /* Orange background */
+  color: #fff; /* White text */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.p-container {
+  padding: 20px;
+  width: 80%;
+  background-color: #ecf0f1; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align:justify;
+}
+
+.p-container:hover {
+  background-color: #f7f9f9; /* Slightly lighter on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .welcome-text, .description-text {
+    font-size: 1.2rem;
+  }
 }
