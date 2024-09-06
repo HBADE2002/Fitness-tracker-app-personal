@@ -114,6 +114,28 @@
   font-family: sportsFont;
   color: darkgreen;
 }
+.font-text-heading {
+  margin-top: 15px;
+  font-family: sportsFont;
+  width: 80%;
+  color: rgb(109, 20, 139);
+  text-align: center;
+  font-size: 2.5rem; /* Increases the font size for prominence */
+  font-weight: bold; /* Makes the text bold */
+  text-transform: uppercase; /* Transforms text to uppercase */
+  letter-spacing: 2px; /* Adds space between letters */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+  background: linear-gradient(45deg, #e0ffe0, #a0ffa0); /* Adds a gradient background */
+  padding: 20px; /* Adds padding around the text */
+  border-bottom: 3px solid darkgreen; /* Adds a bottom border */
+  border-radius: 8px; /* Rounds the corners */
+  transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+.font-text-heading:hover {
+  color: rgb(57, 17, 75); /* Changes text color on hover */
+  transform: scale(1.05); /* Slightly enlarges the text on hover */
+  background: linear-gradient(45deg, #a0ffa0, #e0ffe0); /* Reverses the gradient on hover */
+}
 
 .goal-setting-container {
   width: 100%;
@@ -134,15 +156,6 @@
   justify-content: center;
 }
 .activity-page-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-}
-.personal-info-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -176,4 +189,217 @@
   transform: translateY(-3px);
   background-color: rgb(226, 249, 249);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.homepage-container{
+  width: 80% auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.welcome-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50; /* Dark blue */
+  margin-bottom: 10px;
+}
+
+.description-text {
+  font-family: 'Verdana', sans-serif;
+  font-size: 1.2rem;
+  color: #34495e; /* Slightly lighter blue */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.highlighted-text {
+  background-color: #f39c12; /* Orange background */
+  color: #fff; /* White text */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.p-container {
+  padding: 20px;
+  width: 80%;
+  background-color: #ecf0f1; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align:justify;
+}
+
+.p-container:hover {
+  background-color: #f7f9f9; /* Slightly lighter on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .welcome-text, .description-text {
+    font-size: 1.2rem;
+  }
+}
+/* App.css */
+.homepage-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates a 2x2 grid */
+  gap: 20px; /* Space between grid items */
+  padding: 20px; /* Padding around the grid */
+}
+
+.homepage-images-grid img {
+  width: 100%; /* Make images take full width of the grid cell */
+  height: 250px; /* Set a fixed height for uniformity */
+  object-fit: cover; /* Ensure the images cover the entire area without distortion */
+  border: 5px solid #2c3e50; /* Dark blue border around images */
+  border-radius: 10px; /* Rounded corners for a polished look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.homepage-images-grid img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow on hover for depth */
+}
+.personal-info-container {
+  max-width: 800px; /* Limits the width of the container */
+  margin: 20px auto; /* Centers the container and adds vertical spacing */
+  padding: 20px;
+  border-radius: 8px; /* Rounds the corners of the container */
+  background-color: #f9f9f9; /* Light background color for the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.personal-info-container h1 {
+  text-align: center;
+  color: #2c3e50; /* Dark color for the heading */
+  margin-bottom: 20px;
+}
+
+.input-container {
+  width: 100%; /* Full width for inputs */
+  margin-bottom: 15px; /* Space between input fields */
+  padding: 8px; /* Internal padding for input fields */
+  border: 1px solid #ddd; /* Light border color */
+  border-radius: 4px; /* Rounds the corners of the input fields */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Removes the default spinner in Chrome */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Space between form groups */
+}
+
+.form-group div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-check {
+  margin-bottom: 10px; /* Space between radio buttons */
+}
+
+button[type="submit"] {
+  background-color: #27ae60; /* Green background color */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px; /* Rounds the corners of the button */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+button[type="submit"]:hover {
+  background-color: #2ecc71; /* Slightly lighter green on hover */
+}
+
+label {
+  display: block; /* Makes labels block elements to ensure proper spacing */
+  margin-bottom: 5px;
+  color: #2c3e50; /* Dark color for labels */
+}
+
+/* App.css */
+.health-metrics-container {
+  max-width: 800px; /* Limits the width of the container */
+  margin: 20px auto; /* Centers the container and adds vertical spacing */
+  padding: 20px;
+  border-radius: 8px; /* Rounds the corners of the container */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.health-metrics-container h2,
+.health-metrics-container h3 {
+  color: #2c3e50; /* Dark color for headings */
+  margin-bottom: 15px; /* Space below headings */
+}
+
+.health-metrics-container p {
+  font-size: 1rem; /* Standard font size */
+  color: #34495e; /* Darker color for text */
+  margin-bottom: 10px; /* Space between paragraphs */
+  line-height: 1.6; /* Increased line height for readability */
+}
+
+.health-metrics-container p span {
+  font-weight: bold; /* Makes the metric names bold */
+  color: #27ae60; /* Green color for metric names */
+}
+/* App.css */
+.workout-list-container {
+  max-width: 800px; /* Limits the width of the container */
+  margin: 20px auto; /* Centers the container with vertical spacing */
+  padding: 20px;
+  border-radius: 8px; /* Rounds the corners of the container */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.workout-list-container h2 {
+  color: #2c3e50; /* Dark color for the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  text-align: center; /* Centers the heading text */
+}
+
+.workout-list-container ul {
+  list-style-type: none; /* Removes default list bullets */
+  padding: 0; /* Removes default padding */
+}
+
+.workout-list-container li {
+  display: flex;
+  align-items: center; /* Vertically centers items */
+  justify-content: space-between; /* Distributes space between items */
+  padding: 10px 0; /* Adds padding to list items */
+  border-bottom: 1px solid #ddd; /* Adds a light border below each item */
+}
+
+.workout-list-container span {
+  margin-right: 10px; /* Adds space between spans */
+  color: #34495e; /* Darker color for text */
+}
+
+.workout-list-container button {
+  background-color: #3498db; /* Blue background color */
+  color: white; /* White text color */
+  border: none; /* Removes default border */
+  padding: 5px 10px; /* Adds padding to buttons */
+  font-size: 0.875rem; /* Sets font size */
+  border-radius: 4px; /* Rounds the corners of the buttons */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  margin-left: 10px; /* Adds space between buttons */
+}
+
+.workout-list-container button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
 }

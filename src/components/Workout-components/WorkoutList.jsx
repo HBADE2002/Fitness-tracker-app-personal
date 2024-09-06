@@ -14,7 +14,7 @@ const WorkoutList = ({ onEdit }) => {
   };
 
   return (
-    <div>
+    <div className="workout-list-container ">
       <h2>Workout List</h2>
       <ul>
         {activities.map((activity) => (
