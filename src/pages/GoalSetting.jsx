@@ -1,24 +1,28 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
+// GoalSetting.js
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
 import AddGoal from "../components/GoalSetting-components/AddGoal";
-import UpdateGoal from "../components/GoalSetting-components/UpdateGoal";
 import DeleteGoal from "../components/GoalSetting-components/DeleteGoal";
 
 const GoalSetting = () => {
-  // Access the goals array from the state
-  const goals = useSelector((state) => state.goalSlice.goals); 
+  const goals = useSelector((state) => state.goalSlice.goals);
   const [selectedGoal, setSelectedGoal] = useState(null);
 
   return (
     <div className="space-y-8 goal-setting-container">
       <h2 className="text-2xl font-bold">Goal Setting</h2>
 
-      {/* Add New Goal */}
+      {/* Add/Edit Goal Form */}
       <div>
-        <h3 className="text-xl font-semibold mb-4">Create New Goal</h3>
-        <AddGoal />
+        <h3 className="text-xl font-semibold mb-4">
+          {selectedGoal ? "Edit Goal" : "Create New Goal"}
+        </h3>
+        <AddGoal
+          initialGoal={selectedGoal}
+          onCancel={() => setSelectedGoal(null)}
+        />
       </div>
 
       {/* Display Existing Goals */}
@@ -47,21 +51,6 @@ const GoalSetting = () => {
           <p>No goals have been set yet.</p>
         )}
       </div>
-
-      {/* Show the UpdateGoal form if a goal is selected */}
-      {selectedGoal && (
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Update Goal</h3>
-          <UpdateGoal goal={selectedGoal} />
-          <Button
-            onClick={() => setSelectedGoal(null)} // Cancel edit
-            className="mt-2"
-            variant="secondary"
-          >
-            Cancel Edit
-          </Button>
-        </div>
-      )}
     </div>
   );
 };

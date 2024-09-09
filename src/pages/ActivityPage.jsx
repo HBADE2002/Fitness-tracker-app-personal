@@ -67,7 +67,7 @@ const ActivityPage = () => {
 
   return (
     <div className="activity-page-container">
-      <h1>Activity Tracker</h1>
+      <h1>Exercise Tracker</h1>
       <h2>{editingId ? "Edit Workout" : "Add Workout"}</h2>
       <Form className="personalInfo-input-container">
         {/* Display error message if there is one */}
