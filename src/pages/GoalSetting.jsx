@@ -10,6 +10,11 @@ const GoalSetting = () => {
   const goals = useSelector((state) => state.goalSlice.goals);
   const [selectedGoal, setSelectedGoal] = useState(null);
 
+  const handleDeleteComplete = () => {
+    // Clear the selected goal after a goal is deleted
+    setSelectedGoal(null);
+  };
+
   return (
     <div className="space-y-8 goal-setting-container">
       <h2 className="text-2xl font-bold">Goal Setting</h2>
@@ -43,7 +48,7 @@ const GoalSetting = () => {
                 <Button onClick={() => setSelectedGoal(goal)} variant="primary">
                   Edit
                 </Button>
-                <DeleteGoal goalId={goal.id} />
+                <DeleteGoal goalId={goal.id} onDeleteComplete={handleDeleteComplete} />
               </div>
             </div>
           ))
