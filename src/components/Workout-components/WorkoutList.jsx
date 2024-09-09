@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteActivity } from "../../App/activitySlice";
-import {Button} from "react-bootstrap"
+import { Button } from "react-bootstrap";
 
 const WorkoutList = ({ onEdit }) => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const WorkoutList = ({ onEdit }) => {
   };
 
   return (
-    <div className="workout-list-container ">
+    <div className="workout-list-container">
       <h2>Workout List</h2>
       <ul>
         {activities.map((activity) => (
@@ -23,8 +23,8 @@ const WorkoutList = ({ onEdit }) => {
               <span>{activity.type}</span> |
               <span>{activity.duration} mins</span> |
               <span>{activity.distance} km</span>
-              <Button onClick={() => onEdit(activity.id)}>Edit</Button>
-              <Button onClick={() => handleDelete(activity.id)}>Delete</Button>
+              <Button variant="primary" onClick={() => onEdit(activity.id)}>Edit</Button>
+              <Button variant="danger" onClick={() => handleDelete(activity.id)}>Delete</Button>
             </div>
           </li>
         ))}
