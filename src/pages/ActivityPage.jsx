@@ -5,6 +5,7 @@ import { addActivity, editActivity } from "../App/activitySlice";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import WorkoutList from "../components/Workout-components/WorkoutList";
+import { FormControl } from "react-bootstrap";
 
 const ActivityPage = () => {
   // Hook to dispatch actions to the Redux store
@@ -90,7 +91,7 @@ const ActivityPage = () => {
         {/* Duration input */}
         <div>
           <Form.Label>Duration (minutes)</Form.Label>
-          <input
+          <FormControl
             className="input-container"
             type="number"
             value={workout.duration}
@@ -103,7 +104,7 @@ const ActivityPage = () => {
         {/* Distance input */}
         <div>
           <label>Distance (km)</label>
-          <input
+          <FormControl
             className="input-container"
             type="number"
             value={workout.distance}
