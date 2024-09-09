@@ -31,6 +31,10 @@ const AddGoal = ({ initialGoal, onCancel }) => {
       setFrequency(initialGoal.frequency || "");
       setNotes(initialGoal.notes || "");
     }
+    else{
+      // If no initialGoal is provided, reset the form fields
+      resetForm();
+    }
   }, [initialGoal]);
 
   // Define a function to handle the form submission
@@ -67,7 +71,9 @@ const AddGoal = ({ initialGoal, onCancel }) => {
     resetForm();
 
     // If an onCancel function is provided, call it
-    if (onCancel) onCancel();
+    if (onCancel) {
+      onCancel();
+    }
   };
 
   // Define a function to reset the form fields
@@ -190,7 +196,7 @@ const AddGoal = ({ initialGoal, onCancel }) => {
           {initialGoal ? "Update Goal" : "Create Goal"}
         </Button>
         {initialGoal && (
-          <Button type="button" variant="secondary" onClick={onCancel}>
+          <Button type="button" variant="danger" onClick={onCancel}>
             Cancel
           </Button>
         )}
