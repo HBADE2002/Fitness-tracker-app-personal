@@ -7,7 +7,10 @@ import { addGoal, updateGoal } from "../../App/goalSlice";
 import { Form, Button } from "react-bootstrap";
 
 const AddGoal = ({ initialGoal, onCancel }) => {
+  // Use the useDispatch hook to get a reference to the Redux dispatch function
   const dispatch = useDispatch();
+
+  // Define state variables for the form fields
   const [goalType, setGoalType] = useState("");
   const [currentValue, setCurrentValue] = useState("");
   const [targetValue, setTargetValue] = useState("");
@@ -16,8 +19,10 @@ const AddGoal = ({ initialGoal, onCancel }) => {
   const [frequency, setFrequency] = useState("");
   const [notes, setNotes] = useState("");
 
+  // Use the useEffect hook to populate the form fields if an initialGoal is provided
   useEffect(() => {
     if (initialGoal) {
+      // If an initialGoal is provided, set the form fields to the values of the initialGoal
       setGoalType(initialGoal.goalType);
       setCurrentValue(initialGoal.currentValue);
       setTargetValue(initialGoal.targetValue);
@@ -28,13 +33,18 @@ const AddGoal = ({ initialGoal, onCancel }) => {
     }
   }, [initialGoal]);
 
+  // Define a function to handle the form submission
   const handleSubmit = (e) => {
+    // Prevent the default form submission behavior
     e.preventDefault();
 
+    // Validate the form fields
     if (!goalType || !currentValue || !targetValue || !unit || !deadline) {
+      // If any required fields are missing, show an alert
       return alert("Please fill in all required fields.");
     }
 
+    // Create an object with the form data
     const goalData = {
       goalType,
       currentValue,
@@ -45,16 +55,22 @@ const AddGoal = ({ initialGoal, onCancel }) => {
       notes: notes || "",
     };
 
+    // If an initialGoal is provided, update the existing goal
     if (initialGoal) {
       dispatch(updateGoal({ ...initialGoal, ...goalData }));
     } else {
+      // If no initialGoal is provided, create a new goal
       dispatch(addGoal(goalData));
     }
 
+    // Reset the form fields
     resetForm();
+
+    // If an onCancel function is provided, call it
     if (onCancel) onCancel();
   };
 
+  // Define a function to reset the form fields
   const resetForm = () => {
     setGoalType("");
     setCurrentValue("");
@@ -65,8 +81,10 @@ const AddGoal = ({ initialGoal, onCancel }) => {
     setNotes("");
   };
 
+  // Render the form
   return (
     <Form onSubmit={handleSubmit} className="space-y-4">
+      {/* Goal Type input */}
       <div>
         <Form.Label htmlFor="goalType">Goal Type</Form.Label>
         <Form.Select
@@ -85,6 +103,7 @@ const AddGoal = ({ initialGoal, onCancel }) => {
         </Form.Select>
       </div>
 
+      {/* Current Value, Target Value, and Unit inputs */}
       <div className="flex space-x-4">
         <div className="flex-1">
           <Form.Label htmlFor="currentValue">Current Value</Form.Label>
@@ -122,6 +141,7 @@ const AddGoal = ({ initialGoal, onCancel }) => {
         </div>
       </div>
 
+      {/* Deadline input */}
       <div>
         <Form.Label htmlFor="deadline">Deadline</Form.Label>
         <Form.Control
@@ -134,6 +154,7 @@ const AddGoal = ({ initialGoal, onCancel }) => {
         />
       </div>
 
+      {/* Frequency input */}
       <div>
         <Form.Label htmlFor="frequency">Frequency</Form.Label>
         <Form.Select
@@ -149,6 +170,7 @@ const AddGoal = ({ initialGoal, onCancel }) => {
         </Form.Select>
       </div>
 
+      {/* Notes input */}
       <div>
         <Form.Label htmlFor="notes">Additional Notes</Form.Label>
         <Form.Control
@@ -162,6 +184,7 @@ const AddGoal = ({ initialGoal, onCancel }) => {
         />
       </div>
 
+      {/* Submit and Cancel buttons */}
       <div className="d-flex justify-content-between mt-4">
         <Button type="submit" variant="primary">
           {initialGoal ? "Update Goal" : "Create Goal"}
