@@ -35,6 +35,11 @@ const ActivityPage = () => {
         setWorkout(editingWorkout);
       }
     }
+// It's designed to populate the form (or whatever UI element is controlled by the workout state) when an activity is being edited.
+// When editingId changes (presumably when the user selects an activity to edit), this effect runs.
+// It looks for the activity with the matching ID in the activities array.
+// If found, it updates the workout state with this activity's data, effectively populating the form with the existing data of the activity being edited.
+// The effect also runs if the activities array changes, ensuring that the edited workout data stays in sync with any changes to the activities list.
   }, [editingId, activities]);
 
   // Function to handle form submission (add or edit workout)

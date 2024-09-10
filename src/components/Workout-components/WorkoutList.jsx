@@ -13,6 +13,12 @@ const WorkoutList = ({ onEdit }) => {
     dispatch(deleteActivity(id));
   };
 
+// It sets up the component to interact with the Redux store by providing access to the dispatch function and the current activities state.
+// It defines a handleDelete function that can be called with an activity's ID.
+// When handleDelete is called (probably from a button click or similar event), it dispatches a deleteActivity action to the Redux store.
+// The Redux reducer (which we saw in a previous question) will then process this action and remove the activity from the state.
+// Because the component is selecting the activities from the state, it will automatically re-render with the updated list of activities once the state has been updated.
+
   return (
     <div className="workout-list-container">
       <h2>Workout List</h2>
